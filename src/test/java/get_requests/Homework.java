@@ -1,4 +1,4 @@
-package post_request;
+package get_requests;
 
 import base_urls.HerOkuAppBaseUrl;
 import io.restassured.path.json.JsonPath;
