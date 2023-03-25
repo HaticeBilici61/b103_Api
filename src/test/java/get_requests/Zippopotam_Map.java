@@ -1,7 +1,6 @@
 package get_requests;
 
-import base_urls.ApiZippopotamBaseUrl;
-import io.restassured.http.ContentType;
+import base_urls.ZippopotamBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Assert;
 import org.junit.Test;
@@ -14,7 +13,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
-public class CanhocaHomework02 extends ApiZippopotamBaseUrl {
+public class Zippopotam_Map extends ZippopotamBaseUrl {
 
 /*
         Given
@@ -43,7 +42,7 @@ public class CanhocaHomework02 extends ApiZippopotamBaseUrl {
 
 
     @Test
-    public void hm07() {
+    public void hm02() {
 
         spec.pathParams("first","ES","second","01001");
         Response response =given().when().spec(spec).get("/{first}/{second}");
