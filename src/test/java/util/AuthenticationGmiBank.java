@@ -8,7 +8,12 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
+
+
 public class AuthenticationGmiBank {
+    public static void main(String[] args) {
+        System.out.println("gmiBankToken() = " + gmiBankToken());
+    }
 
     public static String gmiBankToken(){
         String url="https://gmibank.com/api/authenticate";
@@ -17,16 +22,7 @@ public class AuthenticationGmiBank {
         token.put("rememberMe",true);
         token.put("username","batch_yuzuc");
 
-
         Response response= given().contentType(ContentType.JSON).body(token).when().post(url);
-
-/*
-{
-  "password": "Batch.103",
-  "rememberMe": true,
-  "username": "batch_yuzuc"
-}
- */
-        return   response.jsonPath().getString("token");
+        return   response.jsonPath().getString("id_token");
     }
 }

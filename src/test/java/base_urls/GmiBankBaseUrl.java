@@ -13,7 +13,8 @@ public class GmiBankBaseUrl {
     @Before
     public void setUp() {
 
-        spec = new RequestSpecBuilder().setAccept(ContentType.JSON).addHeader("Authorization",gmiBankToken()).setBaseUri("https://www.gmibank.com").build();
+        spec = new RequestSpecBuilder().setContentType(ContentType.JSON).addHeader("Authorization", "Bearer "+gmiBankToken())
+                .setBaseUri("https://www.gmibank.com").build();
 
     }
 
